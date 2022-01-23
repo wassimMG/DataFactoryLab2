@@ -1,0 +1,62 @@
+{
+	"name": "Lab1 - Copy Collision Data",
+	"properties": {
+		"activities": [
+			{
+				"name": "CopyMotorVehicleCollisions",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "7.00:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "SqlDWSink",
+						"allowPolyBase": true,
+						"polyBaseSettings": {
+							"rejectValue": 0,
+							"rejectType": "value",
+							"useTypeDefault": true
+						}
+					},
+					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "synapsedatalake",
+							"type": "LinkedServiceReference"
+						},
+						"path": "polybase"
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "NYCDataSets_MotorVehicleCollisions",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SynapseDW_MotorVehicleCollisions",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "Lab1"
+		},
+		"annotations": [],
+		"lastPublishTime": "2022-01-23T21:20:11Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

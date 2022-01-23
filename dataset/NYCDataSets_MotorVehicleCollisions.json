@@ -1,0 +1,20 @@
+{
+	"name": "NYCDataSets_MotorVehicleCollisions",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OperationalSQL_NYCDataSets",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Lab1"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "NYC",
+			"table": "NYPD_MotorVehicleCollisions"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

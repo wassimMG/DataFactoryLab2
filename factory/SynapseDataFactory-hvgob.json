@@ -1,0 +1,9 @@
+{
+	"name": "SynapseDataFactory-hvgob",
+	"location": "francecentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "fdb257c0-646b-46d2-8d48-98125704dea6",
+		"tenantId": "d6397071-8e3e-45d2-a2d6-36698acf0fea"
+	}
+}
