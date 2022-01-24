@@ -1,0 +1,21 @@
+{
+	"name": "SynapseDataLake_NYCTaxiData_Binary",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "synapsedatalake",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Lab2"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "nyctaxidata-raw"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

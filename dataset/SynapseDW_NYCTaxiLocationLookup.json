@@ -1,0 +1,38 @@
+{
+	"name": "SynapseDW_NYCTaxiLocationLookup",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SynapseSQL_SynapseDW",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Lab2"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [
+			{
+				"name": "LocationID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Borough",
+				"type": "varchar"
+			},
+			{
+				"name": "Zone",
+				"type": "varchar"
+			},
+			{
+				"name": "ServiceZone",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "NYC",
+			"table": "TaxiLocationLookup"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

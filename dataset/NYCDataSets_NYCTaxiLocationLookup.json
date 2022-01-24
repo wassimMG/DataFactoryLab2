@@ -1,0 +1,20 @@
+{
+	"name": "NYCDataSets_NYCTaxiLocationLookup",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "OperationalSQL_NYCDataSets",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Lab2"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "NYC",
+			"table": "TaxiLocationLookup"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

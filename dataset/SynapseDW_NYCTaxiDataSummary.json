@@ -1,0 +1,71 @@
+{
+	"name": "SynapseDW_NYCTaxiDataSummary",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SynapseSQL_SynapseDW",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "Lab2"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [
+			{
+				"name": "PickUpDate",
+				"type": "date"
+			},
+			{
+				"name": "PickUpBorough",
+				"type": "varchar"
+			},
+			{
+				"name": "PickUpZone",
+				"type": "varchar"
+			},
+			{
+				"name": "PaymentType",
+				"type": "varchar"
+			},
+			{
+				"name": "TotalTripCount",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TotalPassengerCount",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "TotalDistanceTravelled",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 2
+			},
+			{
+				"name": "TotalTipAmount",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 2
+			},
+			{
+				"name": "TotalFareAmount",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 2
+			},
+			{
+				"name": "TotalTripAmount",
+				"type": "decimal",
+				"precision": 38,
+				"scale": 2
+			}
+		],
+		"typeProperties": {
+			"schema": "NYC",
+			"table": "TaxiDataSummary"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
