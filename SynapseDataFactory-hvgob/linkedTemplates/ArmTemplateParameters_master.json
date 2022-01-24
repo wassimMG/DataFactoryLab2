@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "SynapseDataFactory-hvgob"
+		},
+		"OperationalSQL_NYCDataSets_connectionString": {
+			"value": ""
+		},
+		"SynapseSQL_SynapseDW_connectionString": {
+			"value": ""
+		},
+		"synapsedatalake_connectionString": {
+			"value": ""
+		},
+		"HTTP_Rebrickable_properties_typeProperties_url": {
+			"value": "https://cdn.rebrickable.com/media/downloads/"
+		},
+		"MDWResources_sasUri": {
+			"value": ""
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
