@@ -85,9 +85,9 @@
 						},
 						"folderPath": "polybase"
 					},
-					"compute": {
-						"coreCount": 8,
-						"computeType": "General"
+					"integrationRuntime": {
+						"referenceName": "MappingDataFlowsIR",
+						"type": "IntegrationRuntimeReference"
 					},
 					"traceLevel": "None",
 					"cacheSinks": {
