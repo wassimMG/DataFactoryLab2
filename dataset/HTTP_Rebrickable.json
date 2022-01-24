@@ -11,6 +11,9 @@
 				"defaultValue": "FileName"
 			}
 		},
+		"folder": {
+			"name": "Rebrickable"
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
