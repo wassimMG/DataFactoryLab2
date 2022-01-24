@@ -1,0 +1,148 @@
+{
+	"name": "Lab 2 - Transform NYC Taxi Data",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy Taxi Location Lookup",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "00:15:00",
+					"retry": 1,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "SqlDWSink",
+						"preCopyScript": "truncate table NYC.TaxiLocationLookup",
+						"allowCopyCommand": true,
+						"disableMetricsCollection": false
+					},
+					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "synapsedatalake",
+							"type": "LinkedServiceReference"
+						},
+						"path": "polybase"
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "NYCDataSets_NYCTaxiLocationLookup",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SynapseDW_NYCTaxiLocationLookup",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Transform NYC Taxi Data",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [
+					{
+						"activity": "Copy Taxi Data Files",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					},
+					{
+						"activity": "Copy Taxi Location Lookup",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "00:20:00",
+					"retry": 1,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "TransformNYCTaxiData",
+						"type": "DataFlowReference"
+					},
+					"staging": {
+						"linkedService": {
+							"referenceName": "synapsedatalake",
+							"type": "LinkedServiceReference"
+						},
+						"folderPath": "polybase"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "None",
+					"cacheSinks": {
+						"firstRowOnly": true
+					}
+				}
+			},
+			{
+				"name": "Copy Taxi Data Files",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "00:20:00",
+					"retry": 1,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "BinarySource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true
+						},
+						"formatSettings": {
+							"type": "BinaryReadSettings"
+						}
+					},
+					"sink": {
+						"type": "BinarySink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"preserve": []
+				},
+				"inputs": [
+					{
+						"referenceName": "MDWResources_NYCTaxiData_Binary",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SynapseDataLake_NYCTaxiData_Binary",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2021-11-10T10:31:11Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
