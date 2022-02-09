@@ -1,0 +1,7 @@
+{
+	"name": "RuntimeIntegration-auto-heberge",
+	"properties": {
+		"type": "SelfHosted",
+		"description": "Runtime d'intégration auto-hébergé"
+	}
+}
