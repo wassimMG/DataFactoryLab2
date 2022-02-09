@@ -1,5 +1,5 @@
 {
-	"name": "pipeline1",
+	"name": "Lab0 - copie",
 	"properties": {
 		"activities": [
 			{
@@ -92,7 +92,7 @@
 			}
 		],
 		"folder": {
-			"name": "Lab2"
+			"name": "Lab0"
 		},
 		"annotations": []
 	}
