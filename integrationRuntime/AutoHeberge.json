@@ -1,0 +1,6 @@
+{
+	"name": "AutoHeberge",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
