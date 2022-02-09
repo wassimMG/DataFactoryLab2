@@ -45,26 +45,10 @@
 						{
 							"name": "Executer Pipeline1",
 							"type": "ExecutePipeline",
-							"dependsOn": [
-								{
-									"activity": "Attente 5 sec",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
-							"userProperties": [],
-							"typeProperties": {
-								"waitOnCompletion": true
-							}
-						},
-						{
-							"name": "Attente 5 sec",
-							"type": "Wait",
 							"dependsOn": [],
 							"userProperties": [],
 							"typeProperties": {
-								"waitTimeInSeconds": 1
+								"waitOnCompletion": true
 							}
 						}
 					]
