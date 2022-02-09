@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "collecter Meta donnee",
+				"name": "Lire MD5 fichier",
 				"type": "GetMetadata",
 				"dependsOn": [],
 				"policy": {
@@ -20,7 +20,7 @@
 				"type": "SetVariable",
 				"dependsOn": [
 					{
-						"activity": "collecter Meta donnee",
+						"activity": "Lire MD5 fichier",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -29,7 +29,7 @@
 				"userProperties": []
 			},
 			{
-				"name": "If Condition1",
+				"name": "Condition if",
 				"type": "IfCondition",
 				"dependsOn": [
 					{
