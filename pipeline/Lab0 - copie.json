@@ -80,15 +80,6 @@
 					"secureInput": false
 				},
 				"userProperties": []
-			},
-			{
-				"name": "Executer Pipeline",
-				"type": "ExecutePipeline",
-				"dependsOn": [],
-				"userProperties": [],
-				"typeProperties": {
-					"waitOnCompletion": true
-				}
 			}
 		],
 		"folder": {
