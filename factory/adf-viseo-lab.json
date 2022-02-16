@@ -1,0 +1,9 @@
+{
+	"name": "adf-viseo-lab",
+	"location": "francecentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "0489ecad-384f-4a78-a4a8-a2b9e9aa6c4f",
+		"tenantId": "d6397071-8e3e-45d2-a2d6-36698acf0fea"
+	}
+}
