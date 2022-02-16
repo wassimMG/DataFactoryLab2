@@ -1,0 +1,9 @@
+{
+	"name": "adf-EM-lab",
+	"location": "francecentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "74007dd5-ab5c-4739-9986-cbdd3a46e126",
+		"tenantId": "d6397071-8e3e-45d2-a2d6-36698acf0fea"
+	}
+}
